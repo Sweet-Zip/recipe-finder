@@ -30,7 +30,6 @@ export default function page() {
     return savedColumns ? parseInt(savedColumns) : 3;
   });
   const [searchTerm, setSearchTerm] = useState('');
-  const [filteredDataLength, setFilteredDataLength] = useState(data.length);
   const searchParams = useSearchParams()
   const [isLoaded, setIsLoaded] = useState(false)
   const search = searchParams.get('search')
@@ -42,15 +41,14 @@ export default function page() {
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value.toLowerCase();
     setSearchTerm(term);
-    console.log(search)
-    if (term === '') {
-      setFilteredDataLength(data.length); // Reset to the total data length when the search term is empty
-    } else {
-      const filteredLength = data.filter(item =>
-        item.title.toLowerCase().includes(term)
-      ).length;
-      setFilteredDataLength(filteredLength); // Update the filtered data length based on the search term
-    }
+
+    const filteredData = data.filter((item) => {
+      const itemTitle = item.title.toLowerCase();
+      const searchTermLower = term.toLowerCase(); // Use the updated term here
+      return itemTitle.includes(searchTermLower) || itemTitle === searchTermLower;
+    });
+
+    console.log(filteredData); // You can use the filteredData as needed
   };
 
   const handleColumnChange = (colCount: number) => {
@@ -115,12 +113,6 @@ export default function page() {
   return (
     <div className='max-w-7xl justify-center items-center mx-auto'>
       <div className={`flex justify-end gap-2`}>
-        {/* <input
-          type="text"
-          placeholder="Search by title"
-          value={searchTerm}
-          onChange={handleSearch}
-        /> */}
         <Pagination
           className='flex justify-center items-center mx-auto'
           current={currentPage}
@@ -139,6 +131,12 @@ export default function page() {
             setItemsPerPage(pageSize); // Update the items per page
           }}
         />
+        {/* <input
+          type="text"
+          placeholder="Search by title"
+          value={searchTerm}
+          onChange={handleSearch}
+        /> */}
         <Dropdown>
           <MenuButton>
             <IoIosMenu size={24} />

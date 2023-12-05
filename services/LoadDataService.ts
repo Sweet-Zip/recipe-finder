@@ -1,4 +1,5 @@
 import { DataModel } from '@/models/DataModel';
+// import fs from 'fs';
 import { parse } from 'papaparse';
 export class LoadDataService {
     async loadCSV(): Promise<DataModel[]> {
@@ -26,10 +27,11 @@ export class LoadDataService {
 
     async loadCSVById(id: string | string[]): Promise<DataModel | null> {
         try {
-            const response = await fetch('data/FoodData.csv');
+            const response = await fetch('/data/FoodData.csv');
             const text = await response.text();
             const result = parse(text, { header: true });
             const parsedData: DataModel[] = result.data.map((row: any) => {
+                // Map the item to a DataModel object
                 const data: DataModel = {
                     id: row.id || '',
                     title: row.title || '',
@@ -40,23 +42,26 @@ export class LoadDataService {
                 };
                 return data;
             });
-
-            // if (!id || (typeof id !== 'string' && !Array.isArray(id))) {
-            //     return []; // Early return for invalid ID
-            // }
-
-            // if (typeof id === 'string') {
-            //     const singleItem = parsedData.find((item) => item.id === id);
-            //     return singleItem ? [singleItem] : [];
-            // } else {
-            //     return parsedData.filter((item) => id.includes(item.id));
-            // }
-            const foundItem = parsedData.find((item) => item.id === id);
-
-            return foundItem || { id: '', title: '', ingredients: [], instructions: '', imageName: '', cleanedIngredients: [] };
+    
+            const item = parsedData.find((row: any) => row.id === id);
+            return item || null;
         } catch (error) {
             console.log("Error", error);
             throw error;
         }
     }
+    
+
+    // readFileAsync(filePath: string): Promise<string> {
+    //     return new Promise<string>((resolve, reject) => {
+    //         fs.readFile(filePath, 'utf8', (error, data) => {
+    //             if (error) {
+    //                 reject(error);
+    //             } else {
+    //                 resolve(data);
+    //             }
+    //         });
+    //     });
+    // }
+
 }

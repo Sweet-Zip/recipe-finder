@@ -19,8 +19,11 @@ export default function RootLayout({
     <html lang="en">
       <body className=''>
         <NavbarComponent />
-        <div className='mt-[6rem]'></div>
-        {children}
+        <div className='mt-[7rem]'>
+          {children}
+        </div>
+
+
       </body>
     </html>
   )

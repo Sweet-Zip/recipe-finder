@@ -3,13 +3,12 @@
     top: 0;
     width: 100%;
     transition: transform 0.3s ease-in-out;
-  }
-  
-  .n-visible {
+}
+
+.n-visible {
     transform: translateY(0);
-  }
-  
-  .n-hidden {
+}
+
+.n-hidden {
     transform: translateY(-100%);
-  }
-  
+}

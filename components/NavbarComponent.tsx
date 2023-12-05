@@ -15,7 +15,7 @@ type NavItemsProps = {
 export default function NavbarComponent() {
     const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
-    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+    const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
     const [visible, setVisible] = useState(true);
     const [theme, setTheme] = useState('loading'); // Initially set a loading state
 
