@@ -24,7 +24,7 @@ export class LoadDataService {
         }
     }
 
-    async loadCSVById(id: string | string []): Promise<DataModel[]> {
+    async loadCSVById(id: string | string[]): Promise<DataModel> {
         try {
             const response = await fetch('data/FoodData.csv');
             const text = await response.text();
@@ -51,7 +51,9 @@ export class LoadDataService {
             // } else {
             //     return parsedData.filter((item) => id.includes(item.id));
             // }
-            return parsedData.find((item) => item.id === id)
+            const foundItem = parsedData.find((item) => item.id === id);
+
+            return foundItem || null;
         } catch (error) {
             console.log("Error", error);
             throw error;

@@ -186,7 +186,7 @@ export default function page() {
       <div className={`grid grid-cols-${columns} gap-5 mt-5`}>
         {currentData.map((item) => (
           <div key={item.title}>
-            <Link href={`/recipe/${item.title}`}>
+            <Link href={`/recipe/${item.id}`}>
               <img
                 className="h-[300px] w-[500px] object-cover rounded-md"
                 src={`food-images/${item.imageName}.jpg`}

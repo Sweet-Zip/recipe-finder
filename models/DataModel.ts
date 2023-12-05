@@ -5,4 +5,4 @@ export interface DataModel {
     instructions: string
     imageName: string
     cleanedIngredients: string[]
-}[]
+}
