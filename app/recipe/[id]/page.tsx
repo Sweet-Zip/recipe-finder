@@ -71,8 +71,8 @@ export default function page() {
                     </li>
                 ))}
             </ul>
-            <p>{data?.ingredients}</p>
-            <ul className='list-disc mt-10'>
+            <p className='text-lg font-bold mt-10'>Instruction</p>
+            <ul className='list-disc mt-3'>
                 {sentences.map((i, index) => (
                     <li key={index} className='my-3'>
                         <p>{i}</p>
