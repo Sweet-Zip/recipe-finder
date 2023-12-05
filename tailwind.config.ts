@@ -13,8 +13,19 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        accent: {
+          primary: 'rgba(var(--color-primary) / <alpha-value>)',
+          primary95: 'rgba(var(--color-primary95) / <alpha-value>)',
+          secondary: 'rgba(var(--color-secondary) / <alpha-value>)',
+          ternary: 'rgba(var(--color-ternary) / <alpha-value>)',
+        },
+        bgk: 'rgba(var(--color-bgk) / <alpha-value>)',
+        bgl: 'rgba(var(--color-bgl) / <alpha-value>)',
+      }
     },
   },
   plugins: [],
+  darkMode: 'class',
 }
 export default config

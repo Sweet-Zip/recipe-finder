@@ -2,26 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  @apply transition-colors duration-75
 }
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --color-bgk: 255 255 255;
+    --color-bgl: 207 216 220;
+    --color-primary: 34 34 34;
+    --color-primary95: 38 50 56;
+    --color-secondary: 176 190 197;
+    --color-ternary: 55 71 79;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  /* @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bgk: 34 34 34;
+      --color-bgl: 38 50 56;
+      --color-primary: 236 239 241;
+      --color-primary95: 207 216 220;
+      --color-secondary: 11 190 197;
+      --color-ternary: 207 216 220;
+    }
+  } */
+
+  :root[data-theme='light'] {
+    --color-bgk: 255 255 255;
+    --color-bgl: 207 216 220;
+    --color-primary: 34 34 34;
+    --color-primary95: 38 50 56;
+    --color-secondary: 176 190 197;
+    --color-ternary: 55 71 79;
+  }
+
+  :root[data-theme='dark'] {
+    --color-bgk: 34 34 34;
+    --color-bgl: 38 50 56;
+    --color-primary: 236 239 241;
+    --color-primary95: 207 216 220;
+    --color-secondary: 11 190 197;
+    --color-ternary: 207 216 220;
+  }
 }
