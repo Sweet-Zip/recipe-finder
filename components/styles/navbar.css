@@ -12,3 +12,45 @@
 .n-hidden {
     transform: translateY(-100%);
 }
+
+.n-logo {
+    animation: slideLeft 0.5s ease-in-out;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.n-link {
+    animation: slideTop 0.5s ease-in-out;
+}
+
+@keyframes slideTop {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.n-search {
+    animation: slideRight 0.5s ease-in-out;
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}

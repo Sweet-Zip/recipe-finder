@@ -1,0 +1,74 @@
+.social-icon {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 70px;
+  width: 70px;
+  padding: 5px;
+  border-radius: 100%;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 1s, box-shadow 1s;
+}
+
+.social-icon:hover {
+  transition-delay: 0s, 1s;
+  color: #fff;
+}
+
+.social-icon::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 0;
+  height: 100%;
+  transform: skewX(35deg);
+  z-index: -1;
+  transition: 1s;
+}
+
+.social-icon:hover::before {
+  width: 100%;
+}
+
+/* Facebook */
+.facebook:hover {
+  box-shadow: 0 0 10px #1974ec, 0 0 20px #1974ec, 0 0 40px #1974ec,
+    0 0 80px #1974ec, 0 0 160px #1974ec;
+}
+
+.facebook::before {
+  background: #1974ec;
+}
+
+/* Instagram */
+.ig:hover {
+  box-shadow: 0 0 10px #e43384, 0 0 20px #ff6b6b, 0 0 40px #e43384,
+    0 0 80px #ff6b6b, 0 0 160px #e43384;
+}
+
+.ig::before {
+  background: linear-gradient(35deg, #e43384, #ff6b6b);
+}
+
+/* Gmail */
+.gmail:hover {
+  box-shadow: 0 0 10px #4285f4, 0 0 20px #bb001b, 0 0 40px #ea4335,
+    0 0 80px #fbbc05, 0 0 160px #34a853;
+}
+
+.gmail::before {
+  background: linear-gradient(
+    35deg,
+    #4285f4,
+    #bb001b,
+    #ea4335,
+    #fbbc05,
+    #34a853
+  );
+}

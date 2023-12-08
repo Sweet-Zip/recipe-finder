@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import NavbarComponent from '@/components/NavbarComponent'
+import FooterComponent from '@/components/FooterComponent'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,7 @@ export default function RootLayout({
         <div className='mt-[7rem]'>
           {children}
         </div>
-
+        <FooterComponent />
 
       </body>
     </html>

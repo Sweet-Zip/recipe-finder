@@ -1,4 +1,5 @@
 import React from 'react'
+import './styles/image.css'
 import { IoArrowForward } from "react-icons/io5";
 export default function ImageCarousel() {
     return (
@@ -7,8 +8,8 @@ export default function ImageCarousel() {
                 <img
                     src="https://img.taste.com.au/hbNtzI2Q/taste/2021/08/clinkers-cake-173208-2.jpg"
                     alt="Cake"
-                    className='h-[500px] object-contain rounded-l-lg' />
-                <div className='flex flex-col justify-center mx-auto px-10'>
+                    className='h-[500px] object-contain rounded-l-lg con-image' />
+                <div className='con-title flex flex-col justify-center mx-auto px-10'>
                     <h1 className='text-start text-5xl mb-7 font-bold'>
                         Mighty Super Cheesecake
                     </h1>

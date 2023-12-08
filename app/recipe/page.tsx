@@ -18,6 +18,8 @@ import { IoGrid } from "react-icons/io5";
 import { useSearchParams } from 'next/navigation';
 import { LoadingComponent } from '@/components/LoadingComponent';
 import Link from 'next/link';
+import './styles.css'
+
 
 export default function page() {
   const [data, setData] = useState<DataModel[]>([])
@@ -184,19 +186,23 @@ export default function page() {
       <div className={`grid grid-cols-${columns} gap-5 mt-5`}>
         {currentData.map((item) => (
           <div key={item.title}>
-            <Link href={`/recipe/${item.id}`}>
-              <img
-                className="h-[300px] w-[500px] object-cover rounded-md"
-                src={`food-images/${item.imageName}.jpg`}
-                alt={item.title}
-                onError={({ currentTarget }) => {
-                  currentTarget.onerror = null;
-                  currentTarget.src = "images/image-not-found.jpg"
-                }}
-              />
-              <p className="text-2xl font-bold mt-2">
-                {item.title}
-              </p>
+            <Link
+              href={`/recipe/${item.id}`}
+              className='item'>
+              <div className='item-content'>
+                <img
+                  className={`item-image ${columns == 4 ? 'h-[176.5px] w-[294.1px]' : columns == 5 ? 'h-[150px] w-[250px]' : 'h-[300px] w-[500px]'}} object-cover rounded-md`}
+                  src={`food-images/${item.imageName}.jpg`}
+                  alt={item.title}
+                  onError={({ currentTarget }) => {
+                    currentTarget.onerror = null;
+                    currentTarget.src = "images/image-not-found.jpg"
+                  }}
+                />
+                <p className={`${columns === 4 ? 'text-xl' : columns === 5 ? 'text-lg' : 'text-2xl'} font-bold mt-2`}>
+                  {item.title}
+                </p>
+              </div>
             </Link>
           </div>
         ))}

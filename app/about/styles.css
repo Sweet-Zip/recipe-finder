@@ -1,0 +1,103 @@
+.dev-pf {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: cover;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 100px;
+  width: 100px;
+  padding: 5px;
+  border-radius: 100%;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 1s, box-shadow 1s;
+}
+
+.dev-pf:hover {
+  transition-delay: 0s, 1s;
+  color: #fff;
+}
+
+.text:hover {
+  transition-delay: 0s, 1s;
+}
+
+.dev-pf::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 0;
+  height: 100%;
+  transform: skewX(35deg);
+  z-index: -1;
+  transition: 1s;
+}
+
+.dev-pf:hover::before {
+  width: 100%;
+}
+
+/* Facebook */
+
+.dev-pf:hover {
+  box-shadow: 0 0 10px #1974ec, 0 0 20px #1974ec, 0 0 40px #1974ec,
+    0 0 80px #1974ec, 0 0 160px #1974ec;
+}
+
+.target-element {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.target-element.show {
+  opacity: 1;
+  animation: slideUp 0.5s ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.slide-in-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-in-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.jump {
+  opacity: 0;
+  transform: scale(0);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.jump.show {
+  opacity: 1;
+  transform: scale(1);
+}

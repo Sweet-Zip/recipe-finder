@@ -1,0 +1,5 @@
+.item:hover .item-image {
+    transform: scale(1.05);
+    filter: brightness(50%);
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+  }
