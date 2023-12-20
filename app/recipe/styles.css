@@ -1,5 +1,27 @@
+.item {
+  /* Define the initial transition properties */
+  transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.item:hover {
+  /* Apply the hover styles */
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
+
 .item:hover .item-image {
-    transform: scale(1.05);
-    filter: brightness(50%);
-    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
-  }
+  /* Apply the hover styles to the image */
+  transform: scale(1.05);
+  filter: brightness(70%);
+}
+
+.item .item-image {
+  /* Define the transition properties for the image */
+  transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.item:not(:hover) .item-image {
+  /* Apply the normal styles to the image when not hovering */
+  transform: scale(1);
+  filter: brightness(100%);
+}

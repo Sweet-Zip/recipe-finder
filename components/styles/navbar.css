@@ -1,56 +1,69 @@
 .navbar-container {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
 }
 
 .n-visible {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .n-hidden {
-    transform: translateY(-100%);
+  transform: translateY(-100%);
 }
 
 .n-logo {
-    animation: slideLeft 0.5s ease-in-out;
+  animation: slideLeft 0.5s ease-in-out;
 }
 
 @keyframes slideLeft {
-    from {
-        transform: translateX(-100%);
-    }
+  from {
+    transform: translateX(-100%);
+  }
 
-    to {
-        transform: translateX(0);
-    }
+  to {
+    transform: translateX(0);
+  }
 }
 
 .n-link {
-    animation: slideTop 0.5s ease-in-out;
+  animation: slideTop 0.5s ease-in-out;
 }
 
 @keyframes slideTop {
-    from {
-        transform: translateY(-100%);
-    }
+  from {
+    transform: translateY(-100%);
+  }
 
-    to {
-        transform: translateY(0);
-    }
+  to {
+    transform: translateY(0);
+  }
 }
 
 .n-search {
-    animation: slideRight 0.5s ease-in-out;
+  animation: slideRight 0.5s ease-in-out;
 }
 
 @keyframes slideRight {
-    from {
-        transform: translateX(100%);
-    }
+  from {
+    transform: translateX(100%);
+  }
 
-    to {
-        transform: translateX(0);
-    }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.fade-in-image {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
